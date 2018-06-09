@@ -5,7 +5,13 @@
 body {
     font-family: 'Pacifico', cursive;
     color:#cdedf6;
+   /*  background: url(../Images/bcg.jpeg)center/cover fixed no-repeat; */
+    
+}
+
+#menu{
     background: url(../Images/bcg.jpeg)center/cover fixed no-repeat;
+
 }
 .main-color {
     color:#266dd3; /* dark blue ~ change later */
