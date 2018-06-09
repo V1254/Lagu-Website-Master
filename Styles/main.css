@@ -5,6 +5,7 @@
 body {
     font-family: 'Pacifico', cursive;
     color:#cdedf6;
+    background: url(../Images/bcg.jpeg)center/cover fixed no-repeat;
 }
 .main-color {
     color:#266dd3; /* dark blue ~ change later */
@@ -60,8 +61,7 @@ a:link{
 .banner h1 {
     border-top:6px dotted #d3325f;
     border-bottom:6px dotted #d3325f;
-  
-    animation: left-to-right;
+    animation: banner-left-right;
     animation-duration: 3s;
     animation-delay:1s;
     opacity:0;
@@ -69,7 +69,7 @@ a:link{
     
 }
 
-@keyframes left-to-right{
+@keyframes banner-left-right{
     0%{
         transform: translateX(-100px); /* at 0% move off screen by 100px; */
         opacity:0;
@@ -84,14 +84,14 @@ a:link{
     }
 }
 
-@keyframes right-to-left{
+@keyframes view-menu-animation{
     0%{
-        transform: translateX(100px); /* at 0% move off screen by 100px; */
+        transform: translateX(-100px); /* at 0% move off screen by 100px; */
         opacity:0;
         
     }
     50%{
-        transform: translateX(-30px)
+        transform: translateX(12px)
     }
     100%{
         transform: translateX(0); /* go back to original */;
@@ -99,13 +99,37 @@ a:link{
     }
 }
 
+@keyframes reserve-animation{
+    0%{
+        transform: translateX(100px); /* at 0% move off screen by 100px; */
+        opacity:0;
+        
+    }
+    50%{
+        transform: translateX(-10px)
+    }
+    100%{
+        transform: translateX(0); /* go back to original */;
+        opacity:1;
+    }
+}
+
+
 .reserve-btn{
-    animation: right-to-left;
+    animation: reserve-animation;
     animation-duration: 3s;
     animation-delay:1s;
     opacity:0;
     animation-fill-mode: forwards;
 
+}
+
+.view-menu-btn{
+    animation: view-menu-animation;
+    animation-duration: 3s;
+    animation-delay:1s;
+    opacity:0;
+    animation-fill-mode: forwards;
 }
 
 
@@ -148,5 +172,81 @@ a:link{
         transform: translateY(-10px); /*move up again*/
     }
 }
+
+/* menu items CSSSS ######### */
+
+.item-container{
+    position:relative;
+  /* links */
+    overflow:hidden; /*to allow image to zoom in when hovered */
+    background:linear-gradient(rgb(0,0,0),rgb(0,0,0));  
+    transition: all 1s ease;
+}
+
+.item-img {
+    transition: all 1s ease;
+}
+
+/* action to happen to item-img upon hover */
+.item-container:hover .item-img{
+    transform:scale(1.2); /* increase image size by number */
+    opacity:0.5; /* becomes darker */
+}
+/* Position Text in center of images */
+.item-link{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color:#d3325f;
+    font-size:2rem;
+    border-top:3px solid #d3325f;
+    border-Bottom:3px solid #d3325f;
+    transition: all 1s ease;
+    opacity:0;
+}
+
+.item-container:hover .item-link{
+    opacity:1;
+}
+
+.item-link:hover {
+    color:#cdedf6;
+    border:3px solid #cdedf6;
+    background: #cdedf6;
+    color:#266dd3
+}
+
+.item-container:hover {
+    outline:10px solid #d3325f;
+    outline-offset: 0.8rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
